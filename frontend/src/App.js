@@ -1,10 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/ProductScreen';
+import Header from './components/Header'
+import Footer from './components/Footer'
+import HomeScreen from './screens/HomeScreen'
+import ProductScreen from './screens/ProductScreen'
+import CartScreen from './screens/CartScreen'
 function App() {
   return (
     <Router>
@@ -17,11 +18,17 @@ function App() {
           <Routes>
             <Route exact path='/product/:id' element={<ProductScreen />} />
           </Routes>
+          <Routes>
+            <Route path='/cart' element={<CartScreen />} />
+          </Routes>
+          <Routes>
+            <Route path='/cart/:id' element={<CartScreen />} />
+          </Routes>
         </Container>
       </main>
       <Footer />
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
